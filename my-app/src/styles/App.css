@@ -1,0 +1,41 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 80vmin;
+  
+}
+
+.App-header {
+  background-color: #ffffff;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color:  black;
+  position: top;
+
+}
+
+/* Left Sidebar
+-----------------------------------------------------------------------------*/
+.App-left-sidebar {
+	float: left;
+	width: 120px;
+	margin-left: auto;
+	position: relative;
+	background:#ffffff;
+}
+
+.App-link {
+  background:#ffffff;
+  color: #56cd0c;
+}
+
+.App-concern {
+  background:#ffffff;
+  color: #56cd0c;
+}
