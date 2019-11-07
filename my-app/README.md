@@ -6,6 +6,10 @@ In the project directory, you can run:
 
 ### `yarn start`
 
+From simple_react_app/my-app directory run the below command
+
+### `npm start run`
+
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
