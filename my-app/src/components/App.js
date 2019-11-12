@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../styles/logo.svg';
 import '../styles/App.css';
+import Demo from './sidebar';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           >
             Main Menu
         </a>
+        <Demo />
         </body>
       </header>
     </div>
