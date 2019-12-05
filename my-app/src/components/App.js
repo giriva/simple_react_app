@@ -1,25 +1,28 @@
 import React from 'react';
 import logo from '../styles/logo.svg';
 import '../styles/App.css';
-import Demo from './sidebar';
+import Demo from './main_body';
+import ReactDOM from 'react-dom';
+import SideBar from './sidebar';
 
 function App() {
   return (
     <div className="App">
+
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
-          A place to post your concerns...
+          A place to post...
         </p>
-        <a
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Welcome To Voice of Tamil Nadu
-        </a>
-
+          Home pageeeee
+        </a> */}
         <body>
           <a
             className="App-left-sidebar"

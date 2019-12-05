@@ -1,92 +1,162 @@
-import React from 'react';
+import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import RecentActorsIcon from '@material-ui/icons/RecentActors';
+import PersonIcon from '@material-ui/icons/Person';
+import CheckCircleOutlineSharpIcon from '@material-ui/icons/CheckCircleOutlineSharp';   
 
-const drawerWidth = 240;
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-  },
-  toolbar: theme.mixins.toolbar,
-}));
+    root: {
+      width: '100%',
+      maxWidth: 360,
+      backgroundColor: theme.palette.background.paper,
+    },
+  }));
 
-export default function ClippedDrawer() {
+// This site has 3 pages, all of which are rendered
+// dynamically in the browser (not server rendered).
+//
+// Although the page does not ever refresh, notice how
+// React Router keeps the URL up to date as you navigate
+// through the site. This preserves the browser history,
+// making sure things like the back button and bookmarks
+// work properly.
+
+export default function SideBar() {
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
   const classes = useStyles();
+  const handleListItemClick = (event, index) => {
+    setSelectedIndex(index);
+  };  
 
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="h6" noWrap>
-            FindMyBuddy
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        className={classes.drawer}
-        variant="permanent"
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <div className={classes.toolbar} />
-        <List>
-          {['Quiz', 'Favourite', 'Matched Results', 'Profile'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        {/* <List> */}
-          {/* {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))} */}
-        {/* </List> */}
-      </Drawer>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. 
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-          facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-          tincidunt. 
-        </Typography>
-      </main>
+    <Router>
+      <div className={classes.root}>
+        {/* <hr /> */}
+        <List component="nav" aria-label="main mailbox folders">
+
+        <ListItem
+          button
+          selected={selectedIndex === 0}
+          onClick={event => handleListItemClick(event, 0)}
+        >
+          <ListItemIcon>
+            <CheckCircleOutlineSharpIcon />
+          </ListItemIcon>
+          <ListItemText primary="Quiz" />
+        </ListItem>
+
+        <ListItem
+          button
+          selected={selectedIndex === 1}
+          onClick={event => handleListItemClick(event, 1)}
+        >
+          <ListItemIcon>
+            <RecentActorsIcon />
+          </ListItemIcon>
+          <ListItemText primary="MatchedResult" />
+        </ListItem>
+
+
+        <ListItem
+          button
+          selected={selectedIndex === 2}
+          onClick={event => handleListItemClick(event, 2)}
+        >
+          <ListItemIcon>
+            <FavoriteIcon />
+          </ListItemIcon>
+          <ListItemText primary="Favourties" />
+        </ListItem>
+
+
+        <ListItem
+          button
+          selected={selectedIndex === 3}
+          onClick={event => handleListItemClick(event, 3)}
+        >
+          <ListItemIcon>
+            <PersonIcon />
+          </ListItemIcon>
+          <ListItemText primary="Profile" />
+        </ListItem>
+
+      </List>
+
+
+        {/*
+          A <Switch> looks through all its children <Route>
+          elements and renders the first one whose path
+          matches the current URL. Use a <Switch> any time
+          you have multiple routes, but you want only one
+          of them to render at a time
+        */}
+        <Switch>
+          <Route exact path="/">
+            <Quiz />
+          </Route>
+          <Route path="/MatchedResult">
+            <MatchedResult />
+          </Route>
+          <Route path="/Favourites">
+            <Favourites />
+          </Route>
+          <Route path="/Profile">
+            <MyProfile />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+// You can think of these components as "pages"
+// in your app.
+
+function Quiz() {
+  return (
+    <div>
+      <h2>Quiz</h2>
+      <p>Quiz Content</p>
     </div>
   );
 }
+
+function MatchedResult() {
+  return (
+    <div>
+      <h2>MatchedResult</h2>
+      <p>MatchedResult Content</p>
+    </div>
+  );
+}
+
+function Favourites() {
+  return (
+    <div>
+      <h2>Favourites</h2>
+      <p>Favourites Content</p>
+    </div>
+  );
+}
+
+function MyProfile() {
+    return (
+      <div>
+        <h2>MyProfile</h2>
+        <p>MyProfile Content</p>
+      </div>
+    );
+  }
+  

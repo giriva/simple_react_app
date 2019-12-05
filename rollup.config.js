@@ -1,7 +1,7 @@
 import babel from "rollup-plugin-babel";
 import pkg from "./package.json";
 
-const input = "./src/sidebar.js";
+const input = "./src/main_body.js";
 
 const external = id => !id.startsWith("/") && !id.startsWith(".");
 
