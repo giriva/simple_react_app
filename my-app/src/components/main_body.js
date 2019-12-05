@@ -4,15 +4,11 @@ import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
-import SideBar from './sidebar'
-// import List from '@material-ui/core/List';
+import SideBar from './sidebar';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-// import ListItem from '@material-ui/core/ListItem';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
-// import ListItemText from '@material-ui/core/ListItemText';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
-// import MailIcon from '@material-ui/icons/Mail';
+import theme from './theme';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 
 const drawerWidth = 240;
 
@@ -41,56 +37,42 @@ export default function ClippedDrawer() {
   const classes = useStyles();
 
   return (
+
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="h6" noWrap>
-            FindMyBuddy
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        className={classes.drawer}
-        variant="permanent"
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <div className={classes.toolbar} />
-        
-        {/* <List>
-          {['Quiz', 'Favouriteee Profiles', 'Top Matches', 'MyProfile'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List> */}
-        <SideBar />
-        <Divider />
-        {/* <List> */}
-          {/* {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))} */}
-        {/* </List> */}
-      </Drawer>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. 
+      <MuiThemeProvider theme={theme}>
+        <AppBar position="fixed" className={classes.appBar} theme={theme}>
+          <Toolbar>
+            <Typography variant="h6" noWrap>
+              FindMyBuddy
+            </Typography>
+          </Toolbar>
+        </AppBar>
+      </MuiThemeProvider> 
+    <Drawer 
+      className={classes.drawer}
+      variant="permanent"
+      classes={{
+        paper: classes.drawerPaper,
+      }}
+    >
+      <div className={classes.toolbar} />
+      {/* <Divider /> */}
+      <SideBar />
+    </Drawer>
+    <main className={classes.content}>
+      <div className={classes.toolbar} />
+      <Typography paragraph>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua.
         </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-          facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-          tincidunt. 
+      <Typography paragraph>
+        Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
+        facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
+        tincidunt.
         </Typography>
-      </main>
-    </div>
+    </main>
+    </div >
   );
 }
 
