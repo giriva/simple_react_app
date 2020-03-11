@@ -6,9 +6,9 @@
 .App-logo {
   height: 100vmin;
 }
-
+/* 
 .App-header {
-  background-color: #ffffff;
+  background-color: #FE6B8B;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
@@ -17,9 +17,9 @@
   font-size: calc(10px + 2vmin);
   color: black;
   position: top;
-}
+} */
 
-.App-list {
+/* .App-list {
     background-color: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
     border: 0;
     border-radius: 1;
@@ -27,11 +27,11 @@
     color: 'white';
     height: 18;
     padding: '0 10px';
-}
+} */
 
 /* Left Sidebar
 -----------------------------------------------------------------------------*/
-.App-left-sidebar {
+/* .App-left-sidebar {
   float: left;
   width: 290px;
   margin-left: auto;
@@ -47,4 +47,4 @@
 .App-concern {
   background: #ffffff;
   color: #56cd0c;
-}
+} */

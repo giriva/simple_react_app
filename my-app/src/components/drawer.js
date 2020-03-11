@@ -41,7 +41,7 @@ export default function ClippedDrawer() {
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
             <Typography variant="h6" noWrap>
-              FindMyBuddy
+              Test
             </Typography>
           </Toolbar>
         </AppBar>
