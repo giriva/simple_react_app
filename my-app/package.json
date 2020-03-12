@@ -3,15 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "@material-ui/core": "^4.6.1",
     "@material-ui/icons": "^4.5.1",
+    "emotion": "^10.0.27",
     "eslint": "^6.6.0",
+    "formik": "^2.1.4",
     "material-ui": "^0.20.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",
     "react-router-native": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "webfontloader": "^1.6.28",
+    "yup": "^0.28.1"
   },
   "scripts": {
     "start": "react-scripts start",
