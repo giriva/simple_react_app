@@ -27,7 +27,9 @@ div {
     text-decoration: none;
     color: #000;
     display: block;
-    width: 200px;
+    height: 100px;
+    width: 100px;
+    align-content: center;
    
     -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
     -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
