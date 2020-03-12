@@ -17,12 +17,3 @@ export default createMuiTheme({
     // error: will use the default color
   },
 });
-
-// export default function Palette() {
-//   return (
-//     <ThemeProvider theme={theme}>
-//       {/* <Button color="primary">Primary</Button>
-//       <Button color="secondary">Secondary</Button> */}
-//     </ThemeProvider>
-//   );
-// }

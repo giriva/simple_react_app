@@ -12,11 +12,9 @@ const useStyles = makeStyles(theme => ({
     gridGap: theme.spacing(3),
   },
   paper: {
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    whiteSpace: 'nowrap',
-    marginBottom: theme.spacing(1),
+    padding: "190px",
+    
+    // This to adjust paper component
   },
   divider: {
     margin: theme.spacing(2, 0),
@@ -33,16 +31,16 @@ export default function CSSGrid() {
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={4}>
-          <Paper className={classes.paper}>xs=4</Paper>
+          <Paper elevation={2} className={classes.paper}>xs=4</Paper>
         </Grid>
       </Grid>
       <Divider className={classes.divider} />
-      <Typography variant="subtitle1" gutterBottom>
+      {/* <Typography variant="subtitle1" gutterBottom>
         CSS Grid Layout:
-      </Typography>
+      </Typography> */}
       <div className={classes.container}>
         <div style={{ gridColumnEnd: 'span 3' }}>
-          <Paper className={classes.paper}>xs=3</Paper>
+          <Paper elevation={6} className={classes.paper}>xs=3</Paper>
         </div>
       </div>
     </div>
