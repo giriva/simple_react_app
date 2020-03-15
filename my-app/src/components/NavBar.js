@@ -8,13 +8,12 @@ import Home from './homePage';
 import Blog from './blogPage';
 import Contact from './contactsPage';
 
-
-class NavBar extends Component {
+export default class NavBar extends Component {
   render() {
     return (
       <BrowserRouter>
       <div>
-        <h1>React Router Simple Starter</h1>
+        <h3>Test</h3>
         <ul className="header">
           <li><NavLink exact to="/">Home</NavLink> </li>
           <li><NavLink to="/blog">Blog</NavLink></li>
@@ -30,5 +29,3 @@ class NavBar extends Component {
     );
   }
 }
-
-export default NavBar;
