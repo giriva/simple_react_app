@@ -1,8 +1,32 @@
 body {
-  background-color: #b9dedf;
+background-color: #b9dedf; 
+/* Enable Gradient in background */
+/* background: linear-gradient(270deg, #c4d208, #f3b786);
+background-size: 400% 400%;
+
+-webkit-animation: Background 30s ease infinite;
+-moz-animation: Background 30s ease infinite;
+animation: Background 30s ease infinite;
+
+@-webkit-keyframes Background {
+    0%{background-position:0% 53%}
+    50%{background-position:100% 48%}
+    100%{background-position:0% 53%}
+}
+@-moz-keyframes Background {
+    0%{background-position:0% 53%}
+    50%{background-position:100% 48%}
+    100%{background-position:0% 53%}
+}
+@keyframes Background {
+    0%{background-position:0% 53%}
+    50%{background-position:100% 48%}
+    100%{background-position:0% 53%}
+} */
   padding: 20px;
   margin: 0;
 }
+
 h1,h2,p,ul,
 li {
   font-family: sans-serif;
